@@ -21,12 +21,19 @@ To stop it execute:
 docker-compose stop
 ```
 
-Verify if n8n and task runner images are the same version
+Verify if n8n and task runner images are the same version:
 
 ```
 docker inspect n8n-main n8n-custom-runner | grep image.version
 ```
+To access it, open with web browser:
+```
+http://localhost:5678
+```
+
 
 ## Configuration
 
 The default name of the database, user and password for PostgreSQL and also n8n version can be changed in the [`.env`](.env) file in the current directory.
+
+Packages for task runner can be modified with ```Dockerfile``` and ```n8n-task-runners.json``` inside [`n8n-custom-runner`](n8n-custom-runner)
