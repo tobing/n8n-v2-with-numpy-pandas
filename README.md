@@ -21,6 +21,12 @@ To stop it execute:
 docker-compose stop
 ```
 
+Verify if n8n and task runner are the same version
+
+```
+docker inspect n8n-main n8n-custom-runner | grep image.version
+```
+
 ## Configuration
 
 The default name of the database, user and password for PostgreSQL and n8n version can be changed in the [`.env`](.env) file in the current directory.
