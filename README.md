@@ -21,10 +21,10 @@ To stop it execute:
 docker-compose stop
 ```
 
-Verify if n8n and task runner images are the same version:
+Verify if n8n, worker and task runner images are the same version:
 
 ```
-docker inspect n8n-main n8n-custom-runner | grep image.version
+docker inspect n8n-main n8n-worker n8n-custom-runner | grep image.version
 ```
 To access it, open with web browser:
 ```
