@@ -29,4 +29,4 @@ docker inspect n8n-main n8n-custom-runner | grep image.version
 
 ## Configuration
 
-The default name of the database, user and password for PostgreSQL and n8n version can be changed in the [`.env`](.env) file in the current directory.
+The default name of the database, user and password for PostgreSQL and also n8n version can be changed in the [`.env`](.env) file in the current directory.
