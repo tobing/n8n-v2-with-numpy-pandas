@@ -36,4 +36,11 @@ http://localhost:5678
 
 The default name of the database, user and password for PostgreSQL and also n8n version can be changed in the [`.env`](.env) file in the current directory.
 
-Packages for task runner can be modified with ```Dockerfile``` and ```n8n-task-runners.json``` inside [`n8n-custom-runner`](n8n-custom-runner)
+External packages for task runner can be modified with ```Dockerfile``` and ```n8n-task-runners.json``` inside [`n8n-custom-runner`](n8n-custom-runner)
+
+Task runner included these external packages:
+
+**NODE**: ```moment,uuid,axios,cheerio,form-data,node-fetch,csv-parse```
+
+**PYTHON**: ```numpy,pandas```
+
