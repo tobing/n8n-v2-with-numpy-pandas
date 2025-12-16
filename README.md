@@ -50,3 +50,7 @@ Task runner included these external packages:
 
 **PYTHON**: ```numpy,pandas```
 
+To verify the external modules working properly, import ```n8n-workflow.json``` from [`verify-external-modules`](verify-external-modules) to n8n then execute workflow.
+
+The workflow contains 3 nodes. Manual trigger, Node Modules Test and Python Modules Test
+
