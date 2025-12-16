@@ -1,0 +1,84 @@
+{
+  "name": "External Modules Verification",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "6051bc0c-1e9b-470b-b252-cbc9a8f7e29f",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "const results = {};\n\n// cheerio\ntry {\n  const cheerio = require(\"cheerio\");\n  const $ = cheerio.load(\"<p>ok</p>\");\n  results.cheerio = $(\"p\").text() === \"ok\";\n} catch (e) {\n  results.cheerio = e.message;\n}\n\n// csv-parse (allowed entry)\ntry {\n  const { parse } = require(\"csv-parse\");\n  results.csv_parse = typeof parse === \"function\";\n} catch (e) {\n  results.csv_parse = e.message;\n}\n\n// form-data\ntry {\n  const FormData = require(\"form-data\");\n  const f = new FormData();\n  f.append(\"a\", \"1\");\n  results.form_data = true;\n} catch (e) {\n  results.form_data = e.message;\n}\n\n// node-fetch (require only)\ntry {\n  const fetchPkg = require(\"node-fetch\");\n  results.node_fetch =\n    typeof fetchPkg === \"function\" || typeof fetchPkg.default === \"function\";\n} catch (e) {\n  results.node_fetch = e.message;\n}\n\n// axios\ntry {\n  const axios = require(\"axios\");\n  results.axios = typeof axios === \"function\";\n} catch (e) {\n  results.axios = e.message;\n}\n\n// moment\ntry {\n  const moment = require(\"moment\");\n  results.moment = moment(\"2025-01-01\").year() === 2025;\n} catch (e) {\n  results.moment = e.message;\n}\n\n// uuid\ntry {\n  const { v4: uuidv4 } = require(\"uuid\");\n  const id = uuidv4();\n  results.uuid = typeof id === \"string\" && id.length > 0;\n} catch (e) {\n  results.uuid = e.message;\n}\n\nreturn [{ json: results }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "43394440-01ce-4eb9-b6c0-249ef205acb4",
+      "name": "Node Modules Test"
+    },
+    {
+      "parameters": {
+        "language": "pythonNative",
+        "pythonCode": "results = {}\n\n# numpy\ntry:\n    import numpy as np\n    arr = np.array([1, 2, 3])\n    results[\"numpy\"] = int(arr.sum()) == 6\nexcept Exception as e:\n    results[\"numpy\"] = str(e)\n\n# pandas\ntry:\n    import pandas as pd\n    df = pd.DataFrame({\"a\": [1, 2], \"b\": [3, 4]})\n    results[\"pandas\"] = int(df[\"a\"].sum()) == 3\nexcept Exception as e:\n    results[\"pandas\"] = str(e)\n\nreturn results\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "78d9441e-9047-4194-984f-6772ca2e5748",
+      "name": "Python Modules Test"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Node Modules Test",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Node Modules Test": {
+      "main": [
+        [
+          {
+            "node": "Python Modules Test",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Python Modules Test": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "versionId": "938c5264-3b28-4fe4-a5ad-3e42390fc0e0",
+  "meta": {
+    "instanceId": "811786ad1ae74adfdd20dd0372abaaebc6246e343aebd01da0bfc4c02bf0106c"
+  },
+  "id": "8f9BKsPJBVutk8vC",
+  "tags": []
+}
