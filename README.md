@@ -6,6 +6,12 @@ Rebuild task runner with numpy and pandas using Dockerfile and also enable block
 
 ## Start
 
+Clone this repo
+```
+git clone https://github.com/tobing/n8n-v2-with-numpy-pandas.git
+cd n8n-v2-with-numpy-pandas
+```
+
 To start n8n simply start docker-compose by executing the following
 command in the current folder.
 
