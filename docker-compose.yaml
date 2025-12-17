@@ -94,7 +94,7 @@ services:
     container_name: n8n-worker
     command: worker  
 
-  n8n-custom-runner-for-worker:
+  n8n-custom-runner:
     build:
       context: ./n8n-custom-runner
       dockerfile: Dockerfile
