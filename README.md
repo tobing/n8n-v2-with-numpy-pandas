@@ -1,6 +1,6 @@
 # n8n v2 with numpy and pandas
 
-n8n v2 with separate task runner and worker. Integrate with PostgreSQL and Redis.
+n8n v2 queue mode with separate task runner and worker. Integrate with PostgreSQL and Redis.
 
 Rebuild task runner with numpy and pandas using Dockerfile and also enable blocked nodes with ```NODES_EXCLUDE="[]"```
 
