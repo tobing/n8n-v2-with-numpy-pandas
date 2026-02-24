@@ -36,7 +36,13 @@ To access it, open with web browser:
 ```
 http://localhost:5678
 ```
+For custom domain, you need to modify these lines in [`docker-compose.yaml`](docker-compose.yaml)
 
+```
+- VUE_APP_URL_BASE_API=http://localhost:5678/
+- N8N_EDITOR_BASE_URL=http://localhost:5678/ 
+- WEBHOOK_URL=http://localhost:5678/ 
+```
 
 ## Configuration
 
