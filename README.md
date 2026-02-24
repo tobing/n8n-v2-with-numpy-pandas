@@ -12,6 +12,9 @@ git clone https://github.com/tobing/n8n-v2-with-numpy-pandas.git
 cd n8n-v2-with-numpy-pandas
 ```
 
+<br />
+
+
 To start n8n simply start docker-compose by executing the following
 command in the current folder.
 
@@ -21,17 +24,24 @@ command in the current folder.
 docker compose up -d --build
 ```
 
+<br />
+
 To stop it execute:
 
 ```
 docker-compose stop
 ```
 
+<br />
+
 Verify if n8n, worker and task runner images are the same version:
 
 ```
 docker inspect n8n-main n8n-worker n8n-custom-runner | grep image.version
 ```
+
+<br />
+
 To access it, open with web browser:
 ```
 http://localhost:5678
@@ -44,6 +54,8 @@ For custom domain, you need to modify these lines in [`docker-compose.yaml`](doc
 - WEBHOOK_URL=http://localhost:5678/ 
 ```
 
+<br />  
+
 ## Configuration
 
 The default name of the database, user and password for PostgreSQL and also n8n version can be changed in the [`.env`](.env) file in the current directory.
@@ -55,6 +67,8 @@ Task runner included these external packages:
 **NODE**: ```moment,uuid,axios,cheerio,form-data,node-fetch,csv-parse```
 
 **PYTHON**: ```numpy,pandas```
+
+<br />
 
 To verify the external packages working properly, import ```n8n-workflow.json``` from [`verify-external-modules`](verify-external-modules) to n8n then execute workflow.
 
