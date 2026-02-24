@@ -36,9 +36,9 @@ x-shared: &shared
     - N8N_SKIP_AUTH_ON_OAUTH_CALLBACK="false"  
     - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
     
-    - VUE_APP_URL_BASE_API=https://localhost:5678/ 
-    - N8N_EDITOR_BASE_URL=https://localhost:5678/ 
-    - WEBHOOK_URL=https://localhost:5678/ 
+    - VUE_APP_URL_BASE_API=http://localhost:5678/ 
+    - N8N_EDITOR_BASE_URL=http://localhost:5678/ 
+    - WEBHOOK_URL=http://localhost:5678/ 
 
   links:
     - postgres
