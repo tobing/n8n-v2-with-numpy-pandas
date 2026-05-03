@@ -121,5 +121,6 @@ services:
       - N8N_RUNNERS_AUTH_TOKEN=${RUNNERS_AUTH_TOKEN}        
       - GENERIC_TIMEZONE=${TIMEZONE}
       - TZ=${TIMEZONE}
+      - N8N_RUNNERS_AUTO_SHUTDOWN_TIMEOUT=0
     depends_on:
       - n8n-worker   
