@@ -115,6 +115,7 @@ services:
         N8N_VERSION: ${N8N_VERSION}
     image: n8n-custom-runner
     container_name: n8n-custom-runner
+    restart: always
     environment:
       - N8N_RUNNERS_TASK_BROKER_URI=http://n8n-worker:5679
       - N8N_ENCRYPTION_KEY=${ENCRYPTION_KEY} 
