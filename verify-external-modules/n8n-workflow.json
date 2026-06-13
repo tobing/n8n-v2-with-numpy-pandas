@@ -9,7 +9,7 @@
         0,
         0
       ],
-      "id": "77cc75a6-c7a6-48b1-83c1-7eb17243d3f2",
+      "id": "8b0a4b7d-587c-4c57-baf7-3e5223ce43db",
       "name": "When clicking ‘Execute workflow’"
     },
     {
@@ -22,13 +22,13 @@
         208,
         0
       ],
-      "id": "28469a25-cace-4cf6-8ab7-121d67432b82",
+      "id": "40d091cf-51cd-45d8-af24-d5cdd15ea296",
       "name": "Node Modules Test"
     },
     {
       "parameters": {
         "language": "pythonNative",
-        "pythonCode": "# Script for old version n8n, for new n8n do not import numpy\n# results = {}\n\n# # numpy\n# try:\n#     import numpy as np\n#     arr = np.array([1, 2, 3])\n#     results[\"numpy\"] = int(arr.sum()) == 6\n# except Exception as e:\n#     results[\"numpy\"] = str(e)\n\n# # pandas\n# try:\n#     import pandas as pd\n#     df = pd.DataFrame({\"a\": [1, 2], \"b\": [3, 4]})\n#     results[\"pandas\"] = int(df[\"a\"].sum()) == 3\n# except Exception as e:\n#     results[\"pandas\"] = str(e)\n\n# return results\n\n\n\nresults = {}\n\n# numpy (simulated)\ntry:\n    arr = [1, 2, 3]\n    results[\"numpy\"] = sum(arr) == 6\nexcept Exception as e:\n    results[\"numpy\"] = str(e)\n\n# pandas\ntry:\n    import pandas as pd\n    df = pd.DataFrame({\"a\": [1, 2], \"b\": [3, 4]})\n    results[\"pandas\"] = int(df[\"a\"].sum()) == 3\nexcept Exception as e:\n    results[\"pandas\"] = str(e)\n\nreturn results"
+        "pythonCode": "# Script for old version n8n, for new n8n do not import numpy\nresults = {}\n\n# numpy\ntry:\n    import numpy as np\n    arr = np.array([1, 2, 3])\n    results[\"numpy\"] = int(arr.sum()) == 6\nexcept Exception as e:\n    results[\"numpy\"] = str(e)\n\n# pandas\ntry:\n    import pandas as pd\n    df = pd.DataFrame({\"a\": [1, 2], \"b\": [3, 4]})\n    results[\"pandas\"] = int(df[\"a\"].sum()) == 3\nexcept Exception as e:\n    results[\"pandas\"] = str(e)\n\nreturn results\n\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -36,7 +36,7 @@
         416,
         0
       ],
-      "id": "8f1fcfdc-836f-4324-9fb6-eb4234bd2bbb",
+      "id": "419418bd-9744-4f44-9bd3-754f36339227",
       "name": "Python Modules Test"
     }
   ],
@@ -68,13 +68,13 @@
   "active": false,
   "settings": {
     "executionOrder": "v1",
-    "binaryMode": "separate",
-    "availableInMCP": false
+    "binaryMode": "separate"
   },
-  "versionId": "37ff808d-226b-4263-8e49-54d5e7b748eb",
+  "versionId": "ccf6a1b4-a686-4643-9593-b79da6185b25",
   "meta": {
-    "instanceId": "d8cf6acc0ca745c4eb46d3b1cceec031e65176aff5cb94cef51e2b5ee47936af"
+    "instanceId": "811786ad1ae74adfdd20dd0372abaaebc6246e343aebd01da0bfc4c02bf0106c"
   },
-  "id": "kx5JTfcNEM8D1Cj-q2QBR",
+  "nodeGroups": [],
+  "id": "R0zwqQ0WgNYZFLRX",
   "tags": []
 }
