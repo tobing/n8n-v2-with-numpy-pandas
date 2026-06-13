@@ -1,5 +1,5 @@
 > [!WARNING]
-> Importing `pandas` in the Python Code node fails with a security violation in n8n 2.25+. Issue has been submitted [Click here](https://github.com/n8n-io/n8n/issues/32149)
+> Importing `pandas` in the Python Code node fails with a security violation in n8n 2.25+, stay in 2.23.4 for now. Issue has been submitted [Click here](https://github.com/n8n-io/n8n/issues/32149)
 
 
 # n8n v2 with numpy and pandas
