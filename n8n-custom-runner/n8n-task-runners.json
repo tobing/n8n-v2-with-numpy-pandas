@@ -44,7 +44,8 @@
 					"N8N_SENTRY_DSN",
 					"N8N_VERSION",
 					"ENVIRONMENT",
-					"DEPLOYMENT_NAME"
+					"DEPLOYMENT_NAME",
+					"N8N_RUNNERS_ALLOW_TRANSITIVE_IMPORTS"
 			],
 			"env-overrides": {
 					"PYTHONPATH": "/opt/runners/task-runner-python",
