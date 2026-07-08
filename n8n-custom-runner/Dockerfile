@@ -5,6 +5,7 @@ FROM n8nio/runners:${N8N_VERSION}
 USER root
 
 # Install Node.js packages for the JS runner
+RUN corepack prepare pnpm@10 --activate
 RUN cd /opt/runners/task-runner-javascript && pnpm add moment uuid axios cheerio form-data node-fetch csv-parse
 
 # Install Python packages for the Python runner
