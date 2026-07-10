@@ -1,7 +1,7 @@
 > [!WARNING]
 > Importing `pandas` in the Python Code node fails with a security violation in n8n 2.25.x - 2.27.x.
 > 
-> Stay in 2.23.4 or update directly to 2.28.4 which introduced N8N_RUNNERS_ALLOW_TRANSITIVE_IMPORTS.
+> Stay in 2.23.4 or update directly to 2.28.4+ which introduced N8N_RUNNERS_ALLOW_TRANSITIVE_IMPORTS.
 > 
 > [Click here](https://github.com/n8n-io/n8n/issues/32149) to check for the issue
 
