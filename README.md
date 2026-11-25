@@ -1,3 +1,7 @@
+> [!WARNING]
+> Upgraded PostgreSQL 18 to PostgreSQL 19 alpine version.
+>
+
 # n8n v2 with numpy and pandas
 
 n8n v2 queue mode with separated task runner and worker. Integrated with PostgreSQL and Redis.
